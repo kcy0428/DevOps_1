@@ -1,3 +1,11 @@
+# human view
+```
+https://www.youtube.com/shorts/EGbEtkZMm98
+```
+# robot view
+```
+https://youtu.be/oqEtx10QnHs
+```
 # lidarsim - LiDAR 기반 장애물 회피 노드
 
 ROS 2 (Jazzy) 패키지로, LiDAR 센서 데이터를 활용해 장애물을 감지하고 Dynamixel 모터로 자율 회피 주행하는 노드입니다.
