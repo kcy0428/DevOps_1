@@ -4,7 +4,7 @@ https://www.youtube.com/shorts/EGbEtkZMm98
 ```
 # robot view
 ```
-
+https://youtu.be/AmB6293V3aU
 ```
 # lidarsim - LiDAR 기반 장애물 회피 노드
 
