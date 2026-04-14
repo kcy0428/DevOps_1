@@ -12,7 +12,7 @@ https://github.com/user-attachments/assets/b7a5bc31-e3da-4113-af54-26bf848c2df9
 https://youtu.be/oqEtx10QnHs
 ```
 # 블럭도
-[Uploading linetracer_2블럭도.<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
   <diagram name="페이지-1" id="ZaPFBhZXTSdRUA5UfPkb">
     <mxGraphModel dx="3679" dy="1814" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
