@@ -19,6 +19,15 @@ https://youtu.be/oqEtx10QnHs
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="e_dist_err" edge="1" parent="1" source="find_dist" style="edgeStyle=orthogonalEdgeStyle;" target="ctrl_err">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="1050" />
+              <mxPoint x="410" y="1050" />
+              <mxPoint x="410" y="1105" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;" value="LineTrackerProcessor — 데이터 흐름 &amp; 알고리즘 블럭도" vertex="1">
           <mxGeometry height="40" width="1050" x="300" y="20" as="geometry" />
         </mxCell>
@@ -43,6 +52,14 @@ https://youtu.be/oqEtx10QnHs
         <mxCell id="kb_cmd" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" value="&lt;b&gt;키 판정&lt;/b&gt;&lt;br/&gt;&#39;s&#39; → mode_ = true (주행)&lt;br/&gt;&#39;q&#39; → mode_ = false (정지)" vertex="1">
           <mxGeometry height="60" width="210" x="1150" y="320" as="geometry" />
         </mxCell>
+        <mxCell id="pSjDqbPjsG99HT8KiDCl-1" edge="1" parent="1" source="mode_flag" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ctrl_mode">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1255" y="1067" />
+              <mxPoint x="670" y="1067" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="mode_flag" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;" value="&lt;b&gt;mode_&lt;/b&gt;&lt;br/&gt;std::atomic&amp;lt;bool&amp;gt;" vertex="1">
           <mxGeometry height="55" width="180" x="1165" y="420" as="geometry" />
         </mxCell>
@@ -55,12 +72,14 @@ https://youtu.be/oqEtx10QnHs
         <mxCell id="e_kb3" edge="1" parent="1" source="kb_cmd" style="edgeStyle=orthogonalEdgeStyle;" target="mode_flag">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_kb_loop" edge="1" parent="1" source="kb_select" style="edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="kb_select" value="loop (running_==true)">
+        <mxCell id="e_kb_loop" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" value="loop (running_==true)">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1400" y="240" />
-              <mxPoint x="1400" y="240" />
+              <mxPoint x="1412" y="240" />
+              <mxPoint x="1412" y="240" />
             </Array>
+            <mxPoint x="1367" y="240" as="sourcePoint" />
+            <mxPoint x="1367" y="240" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="cb_entry" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;" value="&lt;b&gt;image_callback()&lt;/b&gt;&lt;br/&gt;ROS2 Subscription 콜백 (메인 스레드)" vertex="1">
@@ -82,7 +101,7 @@ https://youtu.be/oqEtx10QnHs
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="roi_group_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=12;" value="① setROI() — 전처리 (Preprocessing)" vertex="1">
-          <mxGeometry height="20" width="380" x="260" y="435" as="geometry" />
+          <mxGeometry height="20" width="380" x="260" y="432" as="geometry" />
         </mxCell>
         <mxCell id="roi_border" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#82b366;dashed=1;strokeWidth=2;" value="" vertex="1">
           <mxGeometry height="230" width="500" x="260" y="455" as="geometry" />
@@ -112,7 +131,7 @@ https://youtu.be/oqEtx10QnHs
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="find_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=12;" value="② findLine() — 2단계 라인 탐색 (Connected Components)" vertex="1">
-          <mxGeometry height="20" width="500" x="260" y="710" as="geometry" />
+          <mxGeometry height="20" width="500" x="260" y="706" as="geometry" />
         </mxCell>
         <mxCell id="find_border" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6c8ebf;dashed=1;strokeWidth=2;" value="" vertex="1">
           <mxGeometry height="310" width="500" x="260" y="730" as="geometry" />
@@ -151,10 +170,13 @@ https://youtu.be/oqEtx10QnHs
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="draw_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=12;" value="③ drawResult() — 시각화" vertex="1">
-          <mxGeometry height="20" width="300" x="820" y="710" as="geometry" />
+          <mxGeometry height="20" width="300" x="820" y="707" as="geometry" />
         </mxCell>
         <mxCell id="draw_border" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#9673a6;dashed=1;strokeWidth=2;" value="" vertex="1">
           <mxGeometry height="200" width="300" x="820" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="pSjDqbPjsG99HT8KiDCl-4" edge="1" parent="1" source="draw_convert" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="draw_blue" value="">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="draw_convert" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="GRAY → BGR 변환" vertex="1">
           <mxGeometry height="40" width="260" x="840" y="745" as="geometry" />
@@ -167,17 +189,6 @@ https://youtu.be/oqEtx10QnHs
         </mxCell>
         <mxCell id="draw_circle" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="추적점 표시: cv::circle (빨간 점)" vertex="1">
           <mxGeometry height="35" width="260" x="840" y="910" as="geometry" />
-        </mxCell>
-        <mxCell id="e_find_draw" edge="1" parent="1" source="find_dist" style="edgeStyle=orthogonalEdgeStyle;" target="draw_convert">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="970" y="1010" />
-              <mxPoint x="970" y="745" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e_draw1" edge="1" parent="1" source="draw_convert" style="edgeStyle=orthogonalEdgeStyle;" target="draw_red">
-          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e_draw2" edge="1" parent="1" source="draw_red" style="edgeStyle=orthogonalEdgeStyle;" target="draw_blue">
           <mxGeometry relative="1" as="geometry" />
@@ -192,10 +203,10 @@ https://youtu.be/oqEtx10QnHs
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ctrl_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=12;" value="④ 오차 계산 + P제어 (Proportional Control)" vertex="1">
-          <mxGeometry height="20" width="500" x="260" y="1070" as="geometry" />
+          <mxGeometry height="20" width="500" x="260" y="1057" as="geometry" />
         </mxCell>
         <mxCell id="ctrl_border" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ff8000;dashed=1;strokeWidth=2;" value="" vertex="1">
-          <mxGeometry height="200" width="880" x="260" y="1090" as="geometry" />
+          <mxGeometry height="208" width="880" x="260" y="1082" as="geometry" />
         </mxCell>
         <mxCell id="ctrl_err" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#ff8000;fontSize=11;" value="&lt;b&gt;오차 계산 (Error)&lt;/b&gt;&lt;br/&gt;error = (cols / 2.0) − last_line_x_&lt;br/&gt;= 이미지 중앙 − 라인 검출 위치&lt;br/&gt;양수: 라인이 좌측 → 우회전 필요&lt;br/&gt;음수: 라인이 우측 → 좌회전 필요" vertex="1">
           <mxGeometry height="90" width="260" x="280" y="1105" as="geometry" />
@@ -204,19 +215,10 @@ https://youtu.be/oqEtx10QnHs
           <mxGeometry height="80" width="160" x="590" y="1095" as="geometry" />
         </mxCell>
         <mxCell id="ctrl_run" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#ff8000;fontSize=11;" value="&lt;b&gt;주행 모드 (mode_=true)&lt;/b&gt;&lt;br/&gt;left_vel  = base_vel − error × k&lt;br/&gt;right_vel = −(base_vel + error × k)&lt;br/&gt;&lt;br/&gt;k: 비례 게인 (기본 0.13)&lt;br/&gt;base_vel: 기본 속도 (기본 150)" vertex="1">
-          <mxGeometry height="100" width="320" x="800" y="1090" as="geometry" />
+          <mxGeometry height="100" width="320" x="800" y="1086" as="geometry" />
         </mxCell>
         <mxCell id="ctrl_stop" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" value="&lt;b&gt;정지 모드 (mode_=false)&lt;/b&gt;&lt;br/&gt;left_vel = 0, right_vel = 0" vertex="1">
           <mxGeometry height="55" width="240" x="590" y="1210" as="geometry" />
-        </mxCell>
-        <mxCell id="e_dist_err" edge="1" parent="1" source="find_dist" style="edgeStyle=orthogonalEdgeStyle;" target="ctrl_err">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="510" y="1050" />
-              <mxPoint x="410" y="1050" />
-              <mxPoint x="410" y="1105" />
-            </Array>
-          </mxGeometry>
         </mxCell>
         <mxCell id="e_err_mode" edge="1" parent="1" source="ctrl_err" style="edgeStyle=orthogonalEdgeStyle;" target="ctrl_mode">
           <mxGeometry relative="1" as="geometry" />
@@ -227,34 +229,23 @@ https://youtu.be/oqEtx10QnHs
         <mxCell id="e_mode_stop" edge="1" parent="1" source="ctrl_mode" style="edgeStyle=orthogonalEdgeStyle;" target="ctrl_stop" value="false">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_kbmode_ctrl" edge="1" parent="1" source="mode_flag" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#b85450;" target="ctrl_mode" value="mode_ 공유">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1255" y="447" />
-              <mxPoint x="1255" y="1135" />
-              <mxPoint x="670" y="1135" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="topic_out" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="&lt;b&gt;vel_cmd/topic&lt;/b&gt;&lt;br/&gt;geometry_msgs/Vector3&lt;br/&gt;x = left_vel, y = right_vel, z = 0&lt;br/&gt;QoS: Reliable, KeepLast(10)" vertex="1">
-          <mxGeometry height="70" width="260" x="820" y="1320" as="geometry" />
+          <mxGeometry height="70" width="260" x="829" y="1320" as="geometry" />
         </mxCell>
         <mxCell id="motor_node" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="&lt;b&gt;모터 제어 노드&lt;/b&gt;&lt;br/&gt;(dxl_wsl 등 외부 수신자)" vertex="1">
-          <mxGeometry height="55" width="260" x="820" y="1430" as="geometry" />
+          <mxGeometry height="55" width="260" x="829" y="1430" as="geometry" />
         </mxCell>
-        <mxCell id="e_run_pub" edge="1" parent="1" source="ctrl_run" style="edgeStyle=orthogonalEdgeStyle;" target="topic_out">
+        <mxCell id="e_run_pub" edge="1" parent="1" source="ctrl_run" style="edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="topic_out">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="960" y="1300" />
-              <mxPoint x="950" y="1300" />
+              <mxPoint x="960" y="1320" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e_stop_pub" edge="1" parent="1" source="ctrl_stop" style="edgeStyle=orthogonalEdgeStyle;" target="topic_out">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="710" y="1390" />
-              <mxPoint x="950" y="1390" />
+              <mxPoint x="710" y="1357" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -289,6 +280,9 @@ https://youtu.be/oqEtx10QnHs
     </mxGraphModel>
   </diagram>
 </mxfile>
+
+[linetracer블럭도.drawio](https://github.com/user-attachments/files/26712893/linetracer.drawio)
+
 
 ```
 # linetracer_real 패키지 리팩토링 및 코드 라인별 분석
