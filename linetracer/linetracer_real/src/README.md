@@ -12,12 +12,8 @@ https://github.com/user-attachments/assets/b7a5bc31-e3da-4113-af54-26bf848c2df9
 https://youtu.be/oqEtx10QnHs
 ```
 # 블럭도
-```
-
-
-
-```
 <img width="1408" height="1466" alt="linetracer블럭도 drawio" src="https://github.com/user-attachments/assets/4f2597ee-15b0-406e-a914-07f765efbcdb" />
+
 # linetracer_real 패키지 리팩토링 및 코드 라인별 분석
 
 이 문서는 모듈화 및 클래스화가 완료된 `linetracer_real` 패키지의 소스 코드 구조를 설명합니다. 기존 하나의 `linetracer_real.cpp` 파일에 묶여있던 코드는 OOP 원칙에 맞춰 세 개의 파일(`.hpp`, `.cpp`, `main.cpp`)로 명확하게 분리되었습니다.
