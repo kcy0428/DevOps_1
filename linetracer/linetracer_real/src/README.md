@@ -13,8 +13,7 @@ https://youtu.be/oqEtx10QnHs
 ```
 # 블럭도
 
-<img width="1621" height="1353" alt="linetracer_2블럭도 drawio" src="https://github.com/user-attachments/assets/8c695ede-3636-4d2a-9990-1d1c5dd5ca21" />
-
+<img width="1621" height="1353" alt="linetracer_2블럭도 drawio" src="https://github.com/user-attachments/assets/44029fa0-f443-49f0-b630-d198e2d11fe9" />
 
 ## 1. 헤더 선언부: `include/linetracer_real/linetracer_real.hpp`
 구현부와 설계를 분리하여 외부에서 이 노드 구조를 참고할 수 있도록 클래스와 인터페이스를 선언한 헤더 파일입니다.
